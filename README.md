@@ -376,6 +376,6 @@ LOCK-0 مقدم "كما هو" بدون أي ضمان من أي نوع.
 
 ** LOCK-0 - Keep Your Files Safe **
 
-[⬆ Back to Top](#-lock-0-v1.0.0---encryption-suite)
+[Back to Top](#-lock-0-v1.0.0---encryption-suite)
 
 </div>

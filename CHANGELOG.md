@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.0] - 2026-06-28
 
-### تم إطلاق الإصدار 2.0 - الإصدار الآمن الكامل!
+### تم إطلاق الإصدار 1.0 - الإصدار الآمن الكامل!
 
 ### المميزات الجديدة
 
@@ -209,6 +209,6 @@ pip install -r requirements.txt
 
 **شكراً لاستخدامك LOCK-0!**
 
-[⬆ Back to Top](#changelog--سجل-التغييرات)
+[Back to Top](#changelog--سجل-التغييرات)
 
 </div>

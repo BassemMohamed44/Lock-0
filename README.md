@@ -3,9 +3,8 @@
 > **Advanced File Encryption Tool** | أداة تشفير ملفات متقدمة
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Security](https://img.shields.io/badge/Security-AES--256--GCM-red.svg)]()
-[![Status](https://img.shields.io/badge/Status-Stable-brightgreen.svg)]()
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/BassemMohamed44/Lock-0/blob/main/LICENSE)
+[![Security](https://img.shields.io/badge/Security-AES--256--GCM-red.svg)](https://github.com/BassemMohamed44/Lock-0/blob/main/SECURITY.md)
 
 ---
 
@@ -350,26 +349,6 @@ pyinstaller --onefile --windowed --icon=L0.ico LOCK-0.py
 ### عن الأمان:
 - [OWASP Cryptographic Failures](https://owasp.org/Top10/A02_2021-Cryptographic_Failures/)
 - [Password Security Best Practices](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html)
-
----
-
-##  إحصائيات المشروع
-
-![GitHub stars](https://img.shields.io/github/stars/BassemMohamed44/LOCK-0)
-![GitHub forks](https://img.shields.io/github/forks/BassemMohamed44/LOCK-0)
-![GitHub issues](https://img.shields.io/github/issues/BassemMohamed44/LOCK-0)
-![GitHub last commit](https://img.shields.io/github/last-commit/BassemMohamed44/LOCK-0)
-
----
-
-##  المطورون
-
-**LOCK-0** تم تطويره بواسطة فريق متحمس للأمان السيبراني.
-
-### فريق التطوير:
--  **Lead Developer**: Bassem
-- **Security Advisor**: [Bassem]
-- **UI/UX Designer**: [Bassem]
 
 ---
 

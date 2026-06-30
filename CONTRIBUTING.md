@@ -491,6 +491,6 @@ git commit -m "security: enhance encryption security
 
 **Happy Contributing!**
 
-[⬆ Back to Top](#contributing-to-lock-0--المساهمة-في-lock-0)
+[Back to Top](#contributing-to-lock-0--المساهمة-في-lock-0)
 
 </div>

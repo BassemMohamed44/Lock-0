@@ -1,6 +1,6 @@
 #  LOCK-0 v1.0.0 - Encryption Suite
 
-> **Advanced File Encryption Tool** | أداة تشفير ملفات متقدمة
+> **Advanced File Encryption Tool** 
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/BassemMohamed44/Lock-0/blob/main/LICENSE)
@@ -8,53 +8,53 @@
 
 ---
 
-##  Table of Contents | فهرس المحتويات
+##  Table of Contents 
 
-- [مقدمة عن البرنامج](#مقدمة-عن-البرنامج)
-- [الميزات الأمنية](#الميزات-الأمنية)
-- [المتطلبات](#المتطلبات)
-- [التثبيت](#التثبيت)
-- [طريقة الاستخدام](#طريقة-الاستخدام)
-- [المواصفات التقنية](#المواصفات-التقنية)
-- [أمثلة عملية](#أمثلة-عملية)
-- [الأسئلة الشائعة](#الأسئلة-الشائعة)
-- [المساهمة](#المساهمة)
-- [الترخيص](#الترخيص)
-
----
-
-##  مقدمة عن البرنامج
-
-**LOCK-0** هي أداة تشفير متقدمة وآمنة تم تطويرها باستخدام أحدث معايير التشفير العالمية. 
-
-### ما الذي يميز LOCK-0؟
-
-✅ **تشفير قوي جداً** - AES-256-GCM
-✅ **حماية كاملة** - تشفير/فك تشفير ملفات متعددة تلقائياً  
-✅ **حذف آمن** - حذف نهائي للملفات الأصلية بدون إمكانية استرجاعها  
-✅ **واجهة سهلة** - واجهة رسومية جميلة وسهلة الاستخدام  
-✅ **دعم شامل** - دعم جميع أنواع الملفات والمجلدات  
+- [Program Introduction](#program-introduction)
+- [Security features](#security-features)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [How to use](#how-to-use)
+- [Technical specifications](#technical-specifications)
+- [Practical examples](#practical-examples)
+- [Frequently Asked Questions](#frequently-asked-questions)
+- [Contribution](#contribution)
+- [Licensing](#licensing)
 
 ---
 
-##  الميزات الأمنية
+##  Program Introduction
 
-### Encryption Algorithm | خوارزمية التشفير
+**LOCK-0** It is an advanced and secure encryption tool developed using the latest global encryption standards. 
+
+### What makes a  LOCK-0 special?
+
+ **Very strong encryption** - AES-256-GCM
+ **Full protection** - Automatically encrypt/decrypt multiple files 
+ **Secure Delete** - Permanent deletion of original files with no possibility of recovery
+ **Easy interface** - Beautiful and easy-to-use graphical interface
+ **Comprehensive support** - Supports all file and folder types 
+
+---
+
+##  Security features
+
+### Encryption Algorithm
 ```
-AES-256-GCM (Advanced Encryption Standard)
+- AES-256-GCM (Advanced Encryption Standard)
 - 256-bit key length
 - Galois/Counter Mode (GCM) for authentication
 ```
 
-### Key Derivation | استخلاص المفتاح
+### Key Derivation 
 ```
 PBKDF2-HMAC-SHA256
-- 600,000 iterations (تكرار)
+- 600,000 iterations
 - 16-byte random salt
 - Resistant to Brute Force attacks
 ```
 
-### Additional Security | ميزات أمنية إضافية
+### Additional Security
 ```
 ✓ Cryptographic Hash Verification (SHA-256)
 ✓ Secure File Deletion (3-pass overwrite)
@@ -63,7 +63,7 @@ PBKDF2-HMAC-SHA256
 ✓ Nonce Randomization (12-byte random per file)
 ```
 
-### الملف المشفر يحتوي على:
+### The encrypted file contains:
 ```
 [Magic Header 10 bytes] + [Version 4 bytes] + [File Size 8 bytes] 
 + [Salt 16 bytes] + [Nonce 12 bytes] + [Encrypted Data]
@@ -71,15 +71,15 @@ PBKDF2-HMAC-SHA256
 
 ---
 
-## المتطلبات
+## Requirements
 
-### النظام المطلوب:
-- **Python**: 3.8 أو أحدث
-- **نظام التشغيل**: Windows, macOS, Linux
-- **الذاكرة**: 512 MB حد أدنى
-- **المساحة**: حسب حجم الملفات المراد تشفيرها
+### Required system:
+- **Python**: 3.8 or later
+- **OS**: Windows, macOS, Linux
+- **Memory**: 512 MB minimum
+- **Storage**: Depending on the size of the files to be encrypted
 
-### المكتبات المطلوبة:
+### Required libraries:
 ```bash
 - cryptography >= 41.0.0
 - customtkinter >= 5.0.0
@@ -88,30 +88,30 @@ PBKDF2-HMAC-SHA256
 
 ---
 
-## التثبيت
+## Installation
 
-### الخطوة 1: استنساخ المستودع
+### Step 1: Clone the repository
 ```bash
 git clone https://github.com/BassemMohamed44/LOCK-0.git
 cd LOCK-0
 ```
 
-### الخطوة 2: تثبيت المكتبات
+### Step 2: Install the libraries
 ```bash
 pip install -r requirements.txt
 ```
 
-أو بشكل يدوي:
+Or manually:
 ```bash
 pip install cryptography customtkinter pillow
 ```
 
-### الخطوة 3: تشغيل البرنامج
+### Step 3: Run the program
 ```bash
 python LOCK-0.py
 ```
 
-### (اختياري) بناء ملف تنفيذي .exe
+### (Optional) Create an executable .exe file
 ```bash
 pip install pyinstaller
 pyinstaller --onefile --windowed --icon=L0.ico LOCK-0.py
@@ -119,40 +119,40 @@ pyinstaller --onefile --windowed --icon=L0.ico LOCK-0.py
 
 ---
 
-##  طريقة الاستخدام
+##  How to use
 
-### الواجهة الرسومية:
+### GUI:
 
-#### **لتشفير الملفات:**
+#### **To encrypt files:**
 
-1. **اختر المجلد** - انقر على "استعرض" واختر المجلد المراد تشفيره
-2. **أدخل كلمة السر** - أدخل كلمة سر قوية (8+ أحرف)
-   - ⚠️ تأكد من تذكر كلمة السر! بدونها لن تستطيع فك التشفير
-3. **اختر " تشفير الملفات"**
-4. **انقر "بدء العملية"**
-5. ✅ الملفات الأصلية سيتم حذفها بأمان بعد التشفير الناجح
+1. **Select the folder** - Click on "Browse" and select the folder you want to encrypt.
+2. **Enter the password** - Enter a strong password (8+ characters)
+   - Make sure you remember your password! Without it, you won't be able to decrypt the encryption.
+3. **Select "File Encryption"**
+4. **Click "Start Process"**
+5. The original files will be securely deleted after successful encryption.
 
-####  **لفك تشفير الملفات:**
+####  **To decrypt files:**
 
-1. **اختر المجلد** - اختر المجلد الذي يحتوي على ملفات `.enc`
-2. **أدخل كلمة السر** - أدخل نفس كلمة السر المستخدمة عند التشفير
-3. **اختر " فك التشفير"**
-4. **انقر "بدء العملية"**
-5. ✅ الملفات الأصلية ستظهر مع إزالة ملفات `.enc`
+1. **Select the folder** - Select the folder containing the `.enc` files.
+2. **Enter the password** - Enter the same password used for encryption.
+3. **Select "Decrypt"**
+4. **Click "Start Process"**
+5. The original files will be visible once the `.enc` files are removed.
 
 ---
 
-## المواصفات التقنية
+## Technical specifications
 
-### معلومات الإصدار:
-| الميزة | الوصف |
+### Release Information:
+| Feature | Description |
 |-------|-------|
-| **الإصدار** | 2.0 (Stable) |
-| **تاريخ الإصدار** | 2026 |
-| **لغة البرمجة** | Python 3.8+ |
-| **حجم البرنامج** | ~50 MB (مع المكتبات) |
+| **Version** | 1.0.0 (Stable) |
+| **Release date** | 2026 |
+| **Programming language** | Python 3.8+ |
+| **Program size** | ~50 MB (With libraries) |
 
-### خوارزميات الأمان:
+### security algorithms:
 ```
 ┌─────────────────────────────────────┐
 │   LOCK-0 Security Architecture      │
@@ -171,203 +171,203 @@ pyinstaller --onefile --windowed --icon=L0.ico LOCK-0.py
 └─────────────────────────────────────┘
 ```
 
-### الأداء:
-- **سرعة التشفير**: ~50-100 MB/s (حسب المعالج)
-- **استهلاك الذاكرة**: متغير حسب حجم الملف
-- **الضغط**: بدون ضغط (يحافظ على الحجم الأصلي)
+### Performance:
+- **Encryption speed**: ~50-100 MB/s (According to the processor)
+- **Memory consumption**: Variable depending on file size
+- **Compression**: No compression (maintains original size)
 
 ---
 
-##  أمثلة عملية
+##  Practical examples
 
-### مثال 1: تشفير مجلد كامل
+### Example 1: Encrypting an entire folder
 ```bash
-# المجلد: E:/my_documents/
-# كلمة السر: MySecurePassword123
-# النتيجة: جميع الملفات تصبح *.enc
+# Folder: E:/my_documents/
+# Password: MySecurePassword123
+# Result: All files become *.enc
 ```
 
-### مثال 2: فك تشفير ملفات
+### Example 2: Decrypting files
 ```bash
-# المجلد: E:/my_documents/
-# كلمة السر: MySecurePassword123
-# النتيجة: الملفات الأصلية تظهر مرة أخرى
+# Folder: E:/my_documents/
+# Password: MySecurePassword123
+# Result: The original files reappear
 ```
 
-### مثال 3: الملف المشفر
+### Example 3: The encrypted file
 ```
-قبل التشفير:
+Before encryption:
   document.pdf          (2.5 MB)
   photo.jpg             (5.2 MB)
   video.mp4             (250 MB)
 
-بعد التشفير:
+After encryption:
   document.pdf.enc      (2.5 MB)
   photo.jpg.enc         (5.2 MB)
   video.mp4.enc         (250 MB)
   
-الملفات الأصلية: حُذفت بأمان ✅
+Original files: Safely deleted
 ```
 
 ---
 
-## الأسئلة الشائعة
+## Frequently Asked Questions
 
-### س: هل البرنامج آمن حقاً؟
-**ج:** نعم! يستخدم LOCK-0 معايير التشفير :
-- AES-256 (نفس ما تستخدمه الحكومات الأمريكية)
-- PBKDF2 مع 600,000 تكرار (آمن ضد هجمات Brute Force)
-- GCM Authentication (التحقق من سلامة البيانات)
+### Q: Is the program really safe?
+**A:** Yes! LOCK-0 uses encryption standards:
+- AES-256 (the same one used by the US government)
+- PBKDF2 with 600,000 replicates (safe against Brute Force attacks)
+- GCM Authentication (Data Integrity Verification)
 
-### س: ماذا لو نسيت كلمة السر؟
-**ج:** ❌ لا توجد طريقة لفك التشفير بدون كلمة السر الصحيحة. هذا بقصد من أجل الأمان!
-- تأكد من حفظ كلمة السر في مكان آمن
+### Q: What if I forget my password?
+**A:** There is no way to decrypt the data without the correct password. This is intentional for security reasons!
+- Make sure to save your password in a safe place
 
-### س: هل يمكن فك تشفير الملفات من خادم آخر؟
-**ج:** ✅ نعم! طالما لديك:
-1. الملفات المشفرة (`.enc`)
-2. كلمة السر الصحيحة
-3. LOCK-0 مثبت على الجهاز
+### Q: Can files be decrypted from another server?
+**A:** Yes! As long as you have:
+1. Encrypted files (`.enc`)
+2. Correct password
+3. LOCK-0 installed on the device
 
-### س: هل البرنامج يضغط الملفات؟
-**ج:** ❌ لا. البرنامج يحتفظ بحجم الملف الأصلي (قد يزيد قليلاً بسبب metadata الأمان)
+### Q: Does the program compress files?
+**A:** No. The program retains the original file size (it may increase slightly due to metadata security).
 
-### س: هل يمكن تشفير ملفات نظام التشغيل؟
-**ج:** ❌ لا نوصي بتشفير ملفات نظام التشغيل الحرجة! استخدمه للملفات الشخصية فقط.
+### Q: Can operating system files be encrypted?
+**A:** We do not recommend encrypting critical operating system files! Use it for personal files only.
 
-### س: كم تستغرق عملية التشفير؟
-**ج:** يعتمد على:
-- حجم الملفات (أكبر = أبطأ)
-- سرعة المعالج
-- سرعة القرص الصلب
-- متوسط الوقت: 50-100 MB/s
+### Q: How long does the encryption process take?
+**A:** It depends on:
+- File size (larger = slower) 
+- Processor speed 
+- Hard drive speed 
+- Average time: 50-100 MB/s
 
-### س: هل البرنامج يعمل بدون إنترنت؟
-**ج:** ✅ نعم تماماً! البرنامج يعمل بشكل مستقل تماماً بدون الإنترنت.
+### Q: Does the program work without internet?
+**A:** Yes, absolutely! The program works completely independently without the internet.
 
-### س: هل يمكن استخدام نفس كلمة السر لملفات متعددة؟
-**ج:** ✅ نعم، لكن يفضل استخدام كلمات سر قوية مختلفة للملفات الحساسة جداً.
+### Q: Can the same password be used for multiple files?
+**A:** Yes, but it is preferable to use different strong passwords for very sensitive files.
 
 ---
 
-## المساهمة
+## Contribution
 
-نرحب بمساهماتك! إذا كنت تريد تحسين LOCK-0:
+We welcome your contributions! If you want to improve LOCK-0:
 
-### خطوات المساهمة:
-1. **Fork** المستودع
-2. **أنشئ فرع** جديد:
+### steps Contribution:
+1. **Fork** repo
+2. **A branch was established** new:
    ```bash
    git checkout -b feature/your-feature-name
    ```
-3. **قم بالتغييرات** وأضف التحسينات
-4. **اختبر** التغييرات جيداً
-5. **أرسل** Pull Request
+3. **Make changes** and add improvements
+4. **Test** the changes thoroughly
+5. **Submit** Pull Request
 
-### مجالات التطوير المرحب بها:
--  تحسين الواجهة الرسومية
--  ميزات أمنية إضافية
--  تحسين الأداء
--  تحسين الوثائق
--  إصلاح الأخطاء
--  دعم لغات جديدة
-
----
-
-##  الترخيص
-
-هذا المشروع مرخص تحت **MIT License** - انظر ملف [LICENSE](LICENSE) للتفاصيل.
-
-### باختصار:
-✅ يمكنك استخدام البرنامج بحرية  
-✅ يمكنك تعديله  
-✅ يمكنك توزيعه  
-❌ بدون ضمان أو مسؤولية من المطورين  
+### Areas of welcome development:
+- Improved graphical interface
+- Additional security features
+- Improved performance
+- Improved documentation
+- Bug fixes
+- Support for new languages
 
 ---
 
-## ⚠️ تحذيرات أمنية هامة
+##  Licensing
 
-### قبل استخدام LOCK-0:
+This project is licensed under the **MIT License** - see [LICENSE](LICENSE) file for details.
 
-1. **احفظ كلمة السر** في مكان آمن جداً
-   - بدونها لن تتمكن من فك التشفير!
-   - لا توجد طريقة "نسيت كلمة السر"
+### In short:
+ You can use the program freely.
+ You can modify it.
+ You can distribute it.
+ No warranty or liability from the developers.
+---
 
-2. **عمل نسخة احتياطية** قبل التشفير
-   - تأكد من أن لديك نسخة احتياطية من ملفاتك المهمة
-   - في حالة حدوث خطأ ما
+## Important security warnings
 
-3. **استخدم كلمات سر قوية**
-   - لا تستخدم كلمات سر سهلة (مثل: 123456)
-   - استخدم مزيج من: أحرف كبيرة + صغيرة + أرقام + رموز
+### Before using LOCK-0:
 
-4. **لا تشفر ملفات النظام**
-   - تجنب تشفير ملفات نظام التشغيل الحرجة
-   - قد تؤدي لعدم تشغيل النظام
+1. **Keep your password** in a very secure place.
+- Without it, you won't be able to decrypt the data!
+- There is no "forgot password" option.
 
-5. **الاختبار أولاً**
-   - اختبر على ملفات غير مهمة أولاً
-   - تأكد من أنك تفهم الأداة قبل استخدامها على ملفات حساسة
+2. **Make a Backup** Before Encrypting
+- Make sure you have a backup of your important files
+- In case something goes wrong
+
+3. **Use strong passwords**
+- Don't use easy passwords (e.g., 123456)
+- Use a combination of: uppercase letters + lowercase letters + numbers + symbols
+
+4. **Do not encrypt system files**
+- Avoid encrypting critical operating system files
+- This may cause the system to fail to boot
+
+5. **Test First**
+- Test on unimportant files first.
+- Make sure you understand the tool before using it on sensitive files.
 
 ---
 
-## الدعم والمساعدة
+## Support and assistance
 
-### وجدت خطأ (Bug)؟
--  افتح [Issue جديد](https://github.com/BassemMohamed44/LOCK-0/issues/new)
-- اشرح المشكلة بالتفصيل
-- أضف لقطات الشاشة إذا أمكن
+### Found a bug?
+-  Open [Issue New](https://github.com/BassemMohamed44/LOCK-0/issues/new)
+- Explain the problem in detail. 
+- Add screenshots if possible.
 
-### أسئلة؟
-- استخدم منتدى Discussions
-- أو راسل على البريد الإلكتروني
-
----
-
-## خارطة الطريق (Roadmap)
-
-### المميزات المخطط إضافتها:
-- [ ]  دعم الوضع الليلي والفاتح
-- [ ]  دعم تشفير الملفات الفردية
-- [ ]  خيارات إعدادات متقدمة
-- [ ]  نسخة بسطر الأوامر (CLI)
-- [ ]  تطبيق موبايل
-- [ ]  دعم لغات إضافية
-- [ ]  عرض إحصائيات التشفير
-- [ ]  إشعارات التقدم المتقدمة
+### Questions?
+- Use the Discussions forum
+- Or send an email
 
 ---
 
-##  موارد تعليمية
+## Roadmap
 
-### عن التشفير:
+### Planned features: 
+
+- [ ] Night and light mode support
+- [ ] Individual file encryption support
+- [ ] Advanced settings options
+- [ ] Command-line interface (CLI) version
+- [ ] Mobile app
+- [ ] Additional language support
+- [ ] Encryption statistics display
+- [ ] Advanced progress notifications
+
+---
+
+##  Educational resources
+
+### About encryption:
 - [AES Encryption Explained](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)
 - [PBKDF2 Key Derivation](https://en.wikipedia.org/wiki/PBKDF2)
 - [GCM Authentication Mode](https://en.wikipedia.org/wiki/Galois/Counter_Mode)
 
-### عن الأمان:
+### About safety:
 - [OWASP Cryptographic Failures](https://owasp.org/Top10/A02_2021-Cryptographic_Failures/)
 - [Password Security Best Practices](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html)
 
 ---
 
-##  شكر وتقدير
+##  Thanks and appreciation
 
-شكراً لك على استخدام LOCK-0! إذا أعجبك المشروع:
--  أضف نجمة للمستودع
--  شارك المشروع مع الآخرين
--  شارك ملاحظاتك واقتراحاتك
+Thank you for using LOCK-0! If you liked the project: 
+- Add a star to the repository
+- Share the project with others
+- Share your feedback and suggestions
 
 ---
 
-## نصوص قانونية
+## legal texts
 
-### إخلاء المسؤولية:
+### Disclaimer:
 ```
-LOCK-0 مقدم "كما هو" بدون أي ضمان من أي نوع.
-استخدام هذا البرنامج على مسؤوليتك الخاصة.
-المطورون لا يتحملون أي مسؤولية عن فقدان البيانات أو الأضرار الأخرى.
+LOCK-0 is provided "as is" without any warranty of any kind.
+Use of this software is at your own risk.
+The developers accept no responsibility for data loss or other damages.
 ```
 
 ---

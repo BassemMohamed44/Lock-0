@@ -160,7 +160,7 @@ pyinstaller --onefile --windowed --icon=L0.ico LOCK-0.py
 │                                     │
 │  User Password                      │
 │       ↓                             │
-│  PBKDF2 (SHA-256, 600K iterations) │
+│  PBKDF2 (SHA-256, 600K iterations)  │
 │       ↓                             │
 │  256-bit Key                        │
 │       ↓                             │

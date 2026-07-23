@@ -1,381 +1,307 @@
-#  LOCK-0 v1.0.0 - Encryption Suite
+<p align="center">
+    <img src="assets/banner.png" width="900">
+</p>
 
-> **Advanced File Encryption Tool** 
+# LOCK-0
 
-[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/BassemMohamed44/Lock-0/blob/main/LICENSE)
-[![Security](https://img.shields.io/badge/Security-AES--256--GCM-red.svg)](https://github.com/BassemMohamed44/Lock-0/blob/main/SECURITY.md)
+Modern, secure, and lightweight file encryption software written in Python.
 
----
-
-##  Table of Contents 
-
-- [Program Introduction](#program-introduction)
-- [Security features](#security-features)
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [How to use](#how-to-use)
-- [Technical specifications](#technical-specifications)
-- [Practical examples](#practical-examples)
-- [Frequently Asked Questions](#frequently-asked-questions)
-- [Contribution](#contribution)
-- [Licensing](#licensing)
+LOCK-0 is a desktop application designed to securely encrypt and decrypt files using modern cryptographic standards. It combines a simple graphical interface with authenticated encryption to protect your data while remaining easy to use.
 
 ---
 
-##  Program Introduction
+## Features
 
-**LOCK-0** It is an advanced and secure encryption tool developed using the latest global encryption standards. 
-
-### What makes a  LOCK-0 special?
-
- **Very strong encryption** - AES-256-GCM
- **Full protection** - Automatically encrypt/decrypt multiple files 
- **Secure Delete** - Permanent deletion of original files with no possibility of recovery
- **Easy interface** - Beautiful and easy-to-use graphical interface
- **Comprehensive support** - Supports all file and folder types 
+- AES-256-GCM authenticated encryption
+- PBKDF2-HMAC-SHA256 key derivation
+- 600,000 PBKDF2 iterations
+- Secure deletion of original files
+- Automatic file integrity verification
+- Folder-based encryption
+- Modern CustomTkinter interface
+- Cross-platform support
+- Random salt and nonce generation
+- SHA-256 integrity validation
 
 ---
 
-##  Security features
+---
 
-### Encryption Algorithm
-```
-- AES-256-GCM (Advanced Encryption Standard)
-- 256-bit key length
-- Galois/Counter Mode (GCM) for authentication
-```
+## Screenshots
 
-### Key Derivation 
-```
+### Main Window
+
+![Main Window](assets/main-window.png)
+
+### Encryption
+
+![Encryption](assets/encryption.png)
+
+### Befor Decryption
+
+![Befor-Decryption](assets/befor-encryption.png)
+
+---
+
+## Screenshots11
+
+| Main Window | Encryption | Befor Decryption |
+|-------------|------------|------------|
+| ![](assets/main-window.png) | ![](assets/encryption.png) | ![](assets/befor-encryption.png) |
+
+---
+
+## Security
+
+LOCK-0 follows modern cryptographic best practices.
+
+| Component | Specification |
+|------------|---------------|
+| Encryption Algorithm | AES-256-GCM |
+| Key Derivation | PBKDF2-HMAC-SHA256 |
+| PBKDF2 Iterations | 600,000 |
+| Key Size | 256-bit |
+| Salt | 16 bytes |
+| Nonce | 12 bytes |
+| Integrity | GCM Authentication Tag |
+| Hash Function | SHA-256 |
+
+---
+
+## Encryption Workflow
+
+```text
+Password
+    │
+    ▼
 PBKDF2-HMAC-SHA256
-- 600,000 iterations
-- 16-byte random salt
-- Resistant to Brute Force attacks
+(600,000 iterations)
+    │
+    ▼
+256-bit Encryption Key
+    │
+    ▼
+AES-256-GCM
+    │
+    ▼
+Encrypted File
 ```
 
-### Additional Security
-```
-✓ Cryptographic Hash Verification (SHA-256)
-✓ Secure File Deletion (3-pass overwrite)
-✓ Magic Header Validation
-✓ File Size Integrity Check
-✓ Nonce Randomization (12-byte random per file)
-```
+---
 
-### The encrypted file contains:
-```
-[Magic Header 10 bytes] + [Version 4 bytes] + [File Size 8 bytes] 
-+ [Salt 16 bytes] + [Nonce 12 bytes] + [Encrypted Data]
+## Encrypted File Structure
+
+```text
+┌────────────────────────────┐
+│ Magic Header               │
+├────────────────────────────┤
+│ Version                    │
+├────────────────────────────┤
+│ Original File Size         │
+├────────────────────────────┤
+│ Random Salt (16 bytes)     │
+├────────────────────────────┤
+│ Random Nonce (12 bytes)    │
+├────────────────────────────┤
+│ Ciphertext                 │
+├────────────────────────────┤
+│ Authentication Tag         │
+└────────────────────────────┘
 ```
 
 ---
 
 ## Requirements
 
-### Required system:
-- **Python**: 3.8 or later
-- **OS**: Windows, macOS, Linux
-- **Memory**: 512 MB minimum
-- **Storage**: Depending on the size of the files to be encrypted
+- Python 3.8 or newer
+- Windows, Linux or macOS
 
-### Required libraries:
+Required packages:
+
 ```bash
-- cryptography >= 41.0.0
-- customtkinter >= 5.0.0
-- Pillow >= 10.0.0
+cryptography
+customtkinter
+Pillow
+```
+
+Install everything with:
+
+```bash
+pip install -r requirements.txt
 ```
 
 ---
 
 ## Installation
 
-### Step 1: Clone the repository
+Clone the repository:
+
 ```bash
 git clone https://github.com/BassemMohamed44/LOCK-0.git
+
 cd LOCK-0
 ```
 
-### Step 2: Install the libraries
+Install dependencies:
+
 ```bash
 pip install -r requirements.txt
 ```
 
-Or manually:
-```bash
-pip install cryptography customtkinter pillow
-```
+Run the application:
 
-### Step 3: Run the program
 ```bash
 python LOCK-0.py
 ```
 
-### (Optional) Create an executable .exe file
+---
+
+## Building an Executable
+
+Using PyInstaller:
+
 ```bash
 pip install pyinstaller
-pyinstaller --onefile --windowed --icon=L0.ico LOCK-0.py
+
+pyinstaller ^
+    --onefile ^
+    --windowed ^
+    --icon=L0.ico ^
+    LOCK-0.py
 ```
 
 ---
 
-##  How to use
+## Usage
 
-### GUI:
+### Encrypt Files
 
-#### **To encrypt files:**
+1. Launch LOCK-0.
+2. Select the folder to encrypt.
+3. Enter a strong password.
+4. Choose **Encrypt**.
+5. Click **Start**.
 
-1. **Select the folder** - Click on "Browse" and select the folder you want to encrypt.
-2. **Enter the password** - Enter a strong password (8+ characters)
-   - Make sure you remember your password! Without it, you won't be able to decrypt the encryption.
-3. **Select "File Encryption"**
-4. **Click "Start Process"**
-5. The original files will be securely deleted after successful encryption.
-
-####  **To decrypt files:**
-
-1. **Select the folder** - Select the folder containing the `.enc` files.
-2. **Enter the password** - Enter the same password used for encryption.
-3. **Select "Decrypt"**
-4. **Click "Start Process"**
-5. The original files will be visible once the `.enc` files are removed.
+The original files will be securely deleted after successful encryption.
 
 ---
 
-## Technical specifications
+### Decrypt Files
 
-### Release Information:
-| Feature | Description |
-|-------|-------|
-| **Version** | 1.0.0 (Stable) |
-| **Release date** | 2026 |
-| **Programming language** | Python 3.8+ |
-| **Program size** | ~50 MB (With libraries) |
+1. Launch LOCK-0.
+2. Select the folder containing encrypted files.
+3. Enter the correct password.
+4. Choose **Decrypt**.
+5. Click **Start**.
 
-### security algorithms:
-```
-┌─────────────────────────────────────┐
-│   LOCK-0 Security Architecture      │
-├─────────────────────────────────────┤
-│                                     │
-│  User Password                      │
-│       ↓                             │
-│  PBKDF2 (SHA-256, 600K iterations)  │
-│       ↓                             │
-│  256-bit Key                        │
-│       ↓                             │
-│  AES-256-GCM                        │
-│       ↓                             │
-│  Encrypted File + Metadata          │
-│                                     │
-└─────────────────────────────────────┘
-```
-
-### Performance:
-- **Encryption speed**: ~50-100 MB/s (According to the processor)
-- **Memory consumption**: Variable depending on file size
-- **Compression**: No compression (maintains original size)
+The original files will be restored.
 
 ---
 
-##  Practical examples
+## Project Structure
 
-### Example 1: Encrypting an entire folder
-```bash
-# Folder: E:/my_documents/
-# Password: MySecurePassword123
-# Result: All files become *.enc
-```
-
-### Example 2: Decrypting files
-```bash
-# Folder: E:/my_documents/
-# Password: MySecurePassword123
-# Result: The original files reappear
-```
-
-### Example 3: The encrypted file
-```
-Before encryption:
-  document.pdf          (2.5 MB)
-  photo.jpg             (5.2 MB)
-  video.mp4             (250 MB)
-
-After encryption:
-  document.pdf.enc      (2.5 MB)
-  photo.jpg.enc         (5.2 MB)
-  video.mp4.enc         (250 MB)
-  
-Original files: Safely deleted
+```text
+LOCK-0/
+│
+├── LOCK-0.py
+├── requirements.txt
+├── LICENSE
+├── README.md
+├── SECURITY.md
+└── assets/
 ```
 
 ---
 
-## Frequently Asked Questions
+## Supported Platforms
 
-### Q: Is the program really safe?
-**A:** Yes! LOCK-0 uses encryption standards:
-- AES-256 (the same one used by the US government)
-- PBKDF2 with 600,000 replicates (safe against Brute Force attacks)
-- GCM Authentication (Data Integrity Verification)
-
-### Q: What if I forget my password?
-**A:** There is no way to decrypt the data without the correct password. This is intentional for security reasons!
-- Make sure to save your password in a safe place
-
-### Q: Can files be decrypted from another server?
-**A:** Yes! As long as you have:
-1. Encrypted files (`.enc`)
-2. Correct password
-3. LOCK-0 installed on the device
-
-### Q: Does the program compress files?
-**A:** No. The program retains the original file size (it may increase slightly due to metadata security).
-
-### Q: Can operating system files be encrypted?
-**A:** We do not recommend encrypting critical operating system files! Use it for personal files only.
-
-### Q: How long does the encryption process take?
-**A:** It depends on:
-- File size (larger = slower) 
-- Processor speed 
-- Hard drive speed 
-- Average time: 50-100 MB/s
-
-### Q: Does the program work without internet?
-**A:** Yes, absolutely! The program works completely independently without the internet.
-
-### Q: Can the same password be used for multiple files?
-**A:** Yes, but it is preferable to use different strong passwords for very sensitive files.
-
----
-
-## Contribution
-
-We welcome your contributions! If you want to improve LOCK-0:
-
-### steps Contribution:
-1. **Fork** repo
-2. **A branch was established** new:
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
-3. **Make changes** and add improvements
-4. **Test** the changes thoroughly
-5. **Submit** Pull Request
-
-### Areas of welcome development:
-- Improved graphical interface
-- Additional security features
-- Improved performance
-- Improved documentation
-- Bug fixes
-- Support for new languages
-
----
-
-##  Licensing
-
-This project is licensed under the **MIT License** - see [LICENSE](LICENSE) file for details.
-
-### In short:
- You can use the program freely.
- You can modify it.
- You can distribute it.
- No warranty or liability from the developers.
----
-
-## Important security warnings
-
-### Before using LOCK-0:
-
-1. **Keep your password** in a very secure place.
-- Without it, you won't be able to decrypt the data!
-- There is no "forgot password" option.
-
-2. **Make a Backup** Before Encrypting
-- Make sure you have a backup of your important files
-- In case something goes wrong
-
-3. **Use strong passwords**
-- Don't use easy passwords (e.g., 123456)
-- Use a combination of: uppercase letters + lowercase letters + numbers + symbols
-
-4. **Do not encrypt system files**
-- Avoid encrypting critical operating system files
-- This may cause the system to fail to boot
-
-5. **Test First**
-- Test on unimportant files first.
-- Make sure you understand the tool before using it on sensitive files.
-
----
-
-## Support and assistance
-
-### Found a bug?
--  Open [Issue New](https://github.com/BassemMohamed44/LOCK-0/issues/new)
-- Explain the problem in detail. 
-- Add screenshots if possible.
-
-### Questions?
-- Use the Discussions forum
-- Or send an email
+| Platform | Status |
+|----------|--------|
+| Windows | Supported |
+| Linux | Supported |
+| macOS | Supported |
 
 ---
 
 ## Roadmap
 
-### Planned features: 
-
-- [ ] Night and light mode support
-- [ ] Individual file encryption support
-- [ ] Advanced settings options
-- [ ] Command-line interface (CLI) version
-- [ ] Mobile app
-- [ ] Additional language support
-- [ ] Encryption statistics display
-- [ ] Advanced progress notifications
-
----
-
-##  Educational resources
-
-### About encryption:
-- [AES Encryption Explained](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)
-- [PBKDF2 Key Derivation](https://en.wikipedia.org/wiki/PBKDF2)
-- [GCM Authentication Mode](https://en.wikipedia.org/wiki/Galois/Counter_Mode)
-
-### About safety:
-- [OWASP Cryptographic Failures](https://owasp.org/Top10/A02_2021-Cryptographic_Failures/)
-- [Password Security Best Practices](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html)
+- [ ] Command Line Interface
+- [ ] Drag & Drop support
+- [ ] Multi-threaded encryption
+- [ ] Single file encryption mode
+- [ ] Automatic update checker
+- [ ] Dark / Light theme
+- [ ] Localization
+- [ ] Encryption history
+- [ ] Secure password generator
 
 ---
 
-##  Thanks and appreciation
+## Contributing
 
-Thank you for using LOCK-0! If you liked the project: 
-- Add a star to the repository
-- Share the project with others
-- Share your feedback and suggestions
+Contributions are welcome.
 
----
+1. Fork the repository.
+2. Create a feature branch.
 
-## legal texts
-
-### Disclaimer:
-```
-LOCK-0 is provided "as is" without any warranty of any kind.
-Use of this software is at your own risk.
-The developers accept no responsibility for data loss or other damages.
+```bash
+git checkout -b feature/my-feature
 ```
 
+3. Commit your changes.
+
+```bash
+git commit -m "Add new feature"
+```
+
+4. Push the branch.
+
+```bash
+git push origin feature/my-feature
+```
+
+5. Open a Pull Request.
+
 ---
 
-<div align="center">
+## Security Notice
 
-** LOCK-0 - Keep Your Files Safe **
+LOCK-0 is designed to provide strong encryption, but security also depends on the user.
 
-[Back to Top](#-lock-0-v1.0.0---encryption-suite)
+Please remember:
 
-</div>
+- Use a strong and unique password.
+- Keep backups of important files.
+- Never encrypt operating system files.
+- There is **no password recovery mechanism**.
+- Lost passwords cannot be recovered.
+
+---
+
+## License
+
+This project is licensed under the MIT License.
+
+See the [LICENSE](LICENSE) file for more information.
+
+---
+
+## Acknowledgments
+
+This project relies on several excellent open-source libraries.
+
+- cryptography
+- CustomTkinter
+- Pillow
+
+Thanks to the maintainers and contributors of these projects.
+
+---
+
+<p align="center">
+
+Built with Python.
+
+If you find this project useful, consider giving it a ⭐ on GitHub.
+
+</p>

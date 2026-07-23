@@ -10,6 +10,14 @@ LOCK-0 is a desktop application designed to securely encrypt and decrypt files u
 
 ---
 
+## Screenshots
+
+| Main Window | Encryption | Befor Decryption |
+|-------------|------------|------------|
+| ![](assets/main-window.png) | ![](assets/encryption.png) | ![](assets/befor-encryption.png) |
+
+---
+
 ## Features
 
 - AES-256-GCM authenticated encryption
@@ -192,8 +200,8 @@ LOCK-0/
 | Platform | Status |
 |----------|--------|
 | Windows | Supported |
-| Linux | Supported - t requires very minor adjustments. |
-| macOS | Supported - t requires very minor adjustments. |
+| Linux | Supported - It requires very minor adjustments. |
+| macOS | Supported - It requires very minor adjustments. |
 
 ---
 

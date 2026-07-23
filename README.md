@@ -192,8 +192,8 @@ LOCK-0/
 | Platform | Status |
 |----------|--------|
 | Windows | Supported |
-| Linux | Supported |
-| macOS | Supported |
+| Linux | Supported - t requires very minor adjustments. |
+| macOS | Supported - t requires very minor adjustments. |
 
 ---
 
